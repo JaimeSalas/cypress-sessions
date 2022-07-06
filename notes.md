@@ -63,3 +63,8 @@ it('navigates', () => {
 - Workarounds for lack of *cy.hover()*
 - No *cy.tab()* command
 - Testing file uploads/downloads is app specific
+
+```bash
+npm i cypress -D
+npm run test:e2e
+```
