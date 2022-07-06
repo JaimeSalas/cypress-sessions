@@ -89,3 +89,6 @@ cy.get('[name=submmission]').click(); // Wrong!
 cy.contains('Submit').click(); // Good
 cy.get('[data-cy=submit]').click(); // Good
 ```
+
+
+> [Which query should I use?](https://testing-library.com/docs/guide-which-query)
