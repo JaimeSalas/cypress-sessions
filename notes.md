@@ -68,3 +68,24 @@ it('navigates', () => {
 npm i cypress -D
 npm run test:e2e
 ```
+
+```html
+<button
+    id="main"
+    class="btn btn-large"
+    name="submission"
+    role="button"
+    data-cy="submit"
+>
+    Submit
+</button>
+```
+
+```js
+cy.get('button').click(); // Wrong!!
+cy.get('.btn.btn-large').click(); // Wrong!!
+cy.get('#main').click(); // Wrong!
+cy.get('[name=submmission]').click(); // Wrong!
+cy.contains('Submit').click(); // Good
+cy.get('[data-cy=submit]').click(); // Good
+```
