@@ -8,3 +8,5 @@ junit.xml
 *.orig
 yarn.lock
 .awcache
+*.mp4
+*.png

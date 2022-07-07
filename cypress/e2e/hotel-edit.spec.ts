@@ -29,6 +29,7 @@ describe('Hotel edit', () => {
         cy.findByRole('button', { name: 'Save' }).click();
 
         cy.wait('@loadHotels');
-        cy.findByText('Update hotel two');
+        // cy.findByText('Update hotel two');
+        cy.findByText('Update hotel three');
     });
 });
