@@ -90,5 +90,21 @@ cy.contains('Submit').click(); // Good
 cy.get('[data-cy=submit]').click(); // Good
 ```
 
-
 > [Which query should I use?](https://testing-library.com/docs/guide-which-query)
+
+
+```js
+cy.intercept();
+cy.wait();
+```
+
+```js
+// GET
+cy.request('https://jsonplaceholder.cypress.io/comments').as('comments');
+
+cy.get('@comments').should((response) => {
+    expect(response.body).to.have.length(500);
+    expect(response).to.have.property('headers');
+    expect(response).to.have.property('duration');
+});
+```

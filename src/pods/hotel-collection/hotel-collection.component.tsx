@@ -13,7 +13,7 @@ export const HotelCollectionComponent: React.FunctionComponent<Props> = (
   const { hotelCollection } = props;
 
   return (
-    <ul className={classes.root}>
+    <ul data-cy="my-ul" className={classes.root}>
       {hotelCollection.map((hotel) => (
         <li key={hotel.id}>
           <HotelCard hotel={hotel} />
