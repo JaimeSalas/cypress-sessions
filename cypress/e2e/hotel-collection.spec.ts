@@ -15,11 +15,13 @@ describe('Hotel collection', () => {
         // cy.intercept('GET', '/api/hotels', hotels);
         // cy.fixture('hotels').then((hotels) => {
         // })
-        cy.intercept('GET', '/api/hotels', { fixture: 'hotels.json' }).as('fetchHotels');
+        // cy.intercept('GET', '/api/hotels', { fixture: 'hotels.json' }).as('fetchHotels');
 
-        cy.visit('/hotel-collection');
+        // cy.visit('/hotel-collection');
 
-        cy.wait('@fetchHotels');
-        cy.findAllByRole('listitem').should('have.length', 2);
+        // cy.wait('@fetchHotels');
+        cy.loadAndVisit('/hotel-collection', [{ path: '/api/hotels' }]);
+
+        cy.findAllByRole('listitem').should('have.length', 10);
     });
 })
