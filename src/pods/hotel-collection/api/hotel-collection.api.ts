@@ -5,6 +5,9 @@ const url = '/api/hotels';
 
 export const getHotelCollection = async (): Promise<HotelEntityApi[]> => {
   const { data } = await Axios.get<HotelEntityApi[]>(url);
-
+  // await new Promise(
+  //   (res) => setTimeout(() => { res(undefined)
+  //   }, 4_000)
+  // );
   return data;
 };

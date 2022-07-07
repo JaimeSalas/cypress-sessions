@@ -1,11 +1,11 @@
 describe('Hotel collection', () => {
-    it('should fetch hotels', () => {
+    it.skip('should fetch hotels', () => {
         cy.visit('/hotel-collection');
 
         cy.findAllByRole('listitem').should('have.length', 10);
     });
 
-    it('should fetch hotels and must be greater than 0', () => {
+    it.skip('should fetch hotels and must be greater than 0', () => {
         cy.visit('/hotel-collection');
 
         cy.findAllByRole('listitem').should('have.length.greaterThan', 0);
@@ -15,10 +15,11 @@ describe('Hotel collection', () => {
         // cy.intercept('GET', '/api/hotels', hotels);
         // cy.fixture('hotels').then((hotels) => {
         // })
-        cy.intercept('GET', '/api/hotels', { fixture: 'hotels.json' });
+        cy.intercept('GET', '/api/hotels', { fixture: 'hotels.json' }).as('fetchHotels');
 
         cy.visit('/hotel-collection');
 
+        cy.wait('@fetchHotels');
         cy.findAllByRole('listitem').should('have.length', 2);
     });
 })
